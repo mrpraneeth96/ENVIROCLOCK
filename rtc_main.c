@@ -35,16 +35,16 @@ main()
 {
         Init_Rtc();
         Init_Lcd();
-				Init_Kpm();
-				Init_ADC();
-				Init_Interrupt();
-				Init_Alm_Interrupt();
+		Init_Kpm();
+		Init_ADC();
+		Init_Interrupt();
+		Init_Alm_Interrupt();
 	    SetRTCtimeInfo(8,30,30);
         SetRTCdateInfo(31,03,2004);
         SetRTCday(5);
-				WRITEBIT(IODIR0,5,1);	//alarm indiction pin
-				BuildCgram(cgramLUT,24);
-				CmdLcd(CLEAR_LCD);
+		WRITEBIT(IODIR0,5,1);	//alarm indiction pin
+		BuildCgram(cgramLUT,24);
+		CmdLcd(CLEAR_LCD);
         while(1)
         {
 				getRTCtimeInfo(&hour,&min,&sec);
@@ -70,3 +70,4 @@ main()
 				ScanAlarm();
 		}
 }
+
