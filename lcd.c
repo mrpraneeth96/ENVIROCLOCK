@@ -103,27 +103,6 @@ u16 Udef_Strlen(s8 *str)
 	return i-1;
 }
 
-void Scroll_Lcd(s8 *str1,u16 GOTO_SPECIFIED_LINE)
-{
-	s8 ch,str2[]="               ";
-	u16 l,i;
-	l=Udef_Strlen(str1);
-	if(l<16)
-	{
-		strncat(str1,str2,16-l);
-		l=Udef_Strlen(str1);
-	}
-	while(1)
-	{
-		CmdLcd(GOTO_SPECIFIED_LINE);
-		for(i=0;i<16;i++)
-				CharLcd(str1[i]);
-		delay_ms(100);
-		ch=str1[0];
-		memmove(str1,str1+1,l);
-		str1[l]=ch;
-	}
-}
 
 void BuildCgram(u8 *p,u8 nBytes)
 {
@@ -141,3 +120,4 @@ void BuildCgram(u8 *p,u8 nBytes)
 	//point back to ddram start/display
 	CmdLcd(GOTO_LINE1_POS0);
 }
+
