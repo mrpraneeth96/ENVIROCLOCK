@@ -193,19 +193,6 @@ void edit_info()
 		keyval=KeyScan();
 		while(ColScan()==0);
      	DELAY;
-		/*if(keyval=='<')
-		{
-			disp--;
-			if(disp<1)
-				disp=1;
-		}
-		else if(keyval=='>')
-		{
-			disp++;
-			if(disp>4)
-				disp=4;
-			;
-		}			   */
 		switch(keyval)
 			{
 					case'1':sethour();
@@ -230,7 +217,6 @@ void edit_info()
 								if(disp>4)
 									disp=4;
 								break;
-			;
 					case'E':flag=1;
 									CmdLcd(CLEAR_LCD);
 									break;
@@ -348,3 +334,4 @@ void set_alarm(void)
 		}
 		CmdLcd(CLEAR_LCD);
 }
+
